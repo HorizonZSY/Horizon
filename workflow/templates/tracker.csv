@@ -1,0 +1,2 @@
+id,type,institution,programme,country,system,deadline,deadline_type,deadline_source_url,deadline_checked_on,funding_route,proposal_required,word_limit,supervisor,tier,contact_status,contacted_on,follow_up_on,reply,docs_status,referees_status,submitted_on,outcome,notes
+example-1,PhD,Example University,PhD Economics,UK,UK,YYYY-MM-DD,funding,https://example.ac.uk/phd-economics,YYYY-MM-DD,university studentship,yes,2500,Prof. Example,A,not_contacted,,,,proposal_v1,not_asked,,,示例行，复制到 applications/tracker.csv 后删除

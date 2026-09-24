@@ -1,0 +1,11 @@
+# 本仓库是 public。个人档案与具体申请产出默认不入库。
+# 如果把仓库改为 private 并希望云端会话也能保留这些文件，可删除下面两行。
+workflow/profile.local.md
+applications/
+
+# 通用
+.DS_Store
+*.aux
+*.log
+*.out
+*.synctex.gz
