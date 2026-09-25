@@ -8,6 +8,8 @@ argument-hint: <slug> [adapt <项目slug> --supervisor <导师名>] [--limit <�
 
 先读 `workflow/rules.md` 并全程遵守。结构骨架见 `workflow/templates/research-proposal.md`。
 
+已经有一份 proposal、想优化或补全时，用 `/rp-improve`。本 skill 用于从零起草，以及改编给具体项目。
+
 两种模式：
 
 - **draft**（默认）：`/rp-draft <slug>` → 从 `applications/<slug>/01-scope.md` 起草核心版

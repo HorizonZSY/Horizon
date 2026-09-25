@@ -14,7 +14,7 @@ argument-hint: <slug> [--version <N>] [--focus identification|literature|feasibi
 
 ## 角色分离
 
-审稿阶段**只评不改**：不直接修改 proposal 文件（借鉴 hugosantanna/clo-author 的 worker–critic 分离：critic 不能编辑，creator 不能给自己打分）。修改在用户确认修改计划后，由 `/rp-draft` 生成下一版。
+审稿阶段**只评不改**：不直接修改 proposal 文件（借鉴 hugosantanna/clo-author 的 worker–critic 分离：critic 不能编辑，creator 不能给自己打分）。修改在用户确认修改计划后，由 `/rp-improve <slug> --review 03-review-v<N>.md` 生成下一版。
 
 ## Step 1 — 三位审稿人独立审阅
 
@@ -84,7 +84,7 @@ argument-hint: <slug> [--version <N>] [--focus identification|literature|feasibi
 
 ## 循环与停止条件
 
-- 用户确认修改计划 → `/rp-draft <slug>` 生成 v<N+1> → 再次 `/rp-review`
+- 用户确认修改计划 → `/rp-improve <slug> --review 03-review-v<N>.md` 生成 v<N+1> → 再次 `/rp-review`
 - 停止条件（同时满足）：无 FATAL；MAJOR ≤ 2；总分 ≥ 75
 - 最多 3 轮。3 轮后仍不满足，说明卡在哪一类问题，并判断是否应回到 `/rp-scope` 换题或换设计
 - 每轮在输出开头列出上一轮 MUST 项的处理情况：已解决 / 部分解决 / 未解决

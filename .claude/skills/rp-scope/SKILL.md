@@ -1,7 +1,7 @@
 ---
 name: rp-scope
 description: 研究选题与可行性论证（research proposal 第一步）。把一个模糊的研究方向收敛成一个可证伪、可识别、数据可得的研究问题，并完成文献定位与新颖性检查。当用户说"帮我选题""这个题目能不能做""找研究空白""proposal 之前先论证一下"时使用。
-argument-hint: <研究方向或种子想法> [--slug <目录名>] [--target <目标项目或导师>]
+argument-hint: <研究方向或种子想法> [--slug <目录名>] [--target <目标项目或导师>] [--corpus <语料文件>]
 ---
 
 # /rp-scope — 选题与可行性
@@ -11,6 +11,12 @@ argument-hint: <研究方向或种子想法> [--slug <目录名>] [--target <目
 产出：`applications/<slug>/01-scope.md` 与 `applications/<slug>/refs.md`。
 
 ## Step 0 — 收集输入
+
+如果传入了 `--corpus`（结构参考 `workflow/templates/proposal-corpus.md`），先读语料：
+
+- 核心问题、竞争假说、数据限制：直接作为 Step 1、4、6 的起点
+- 已核查文献：写入 `refs.md`，逐条确认核实等级；只补检索缺口，已覆盖的主题不重复检索
+- 语料里的"尚待落实"项：列为本次论证必须回答的问题
 
 缺什么问什么，一次问完，不超过 5 个问题：
 

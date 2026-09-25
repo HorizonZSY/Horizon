@@ -7,15 +7,18 @@
                   │  list 选校核实 → timeline 倒排 → sop / referees → interview → weekly │
                   └──────────────────────────────────────────────────────────────────────┘
 
-profile.local.md
+ 主入口：已有 proposal（任何完成度）
       │
       ▼
- /rp-scope ──门槛──► /rp-draft ──► /rp-review ──(未达标, ≤3 轮)──┐
- 选题/文献/新颖性      起草核心版       三方审稿+引用核查          │
- 假设/识别/数据          ▲                                      │
-                        └──────────── 修改计划 MUST/SHOULD ◄────┘
-                                          │ 达标
-                                          ▼
+ /rp-improve ─────────► /rp-review ──(未达标, ≤3 轮)──┐
+ 诊断断链与缺节            三方审稿+引用核查             │
+ 填充 → 优化               ▲                           │
+      ▲                    │                           │
+      └── --review 执行修改计划 MUST/SHOULD ◄──────────┘
+                                │ 达标
+ 从零开始时：                    │
+ 语料（可选）→ /rp-scope → /rp-draft → /rp-review
+                                ▼
                               /phd-outreach  find → fit → email → followup
                                           │ 导师积极回复
                                           ▼
@@ -29,7 +32,9 @@ profile.local.md
 
 | 阶段 | 命令 | 输入 | 产出 | 进入下一步的门槛 |
 |---|---|---|---|---|
-| 1. 选题 | `/rp-scope <方向> --slug <slug>` | 种子想法、档案 | `01-scope.md`、`refs.md` | ≥8 篇已核实文献；无 SAME；假设有拒绝条件；识别假设 + 检验；数据获取方式已核实 |
+| **主入口：优化/补全** | `/rp-improve <文件> [--section / --interview / --review / --corpus]` | 已有 proposal、语料、refs | `02-proposal-v<N+1>.md`、`02-notes-v<N+1>.md` | 论证链六环都明确；无缺失章节；`[USER]` 问题已交给用户 |
+| 0. 语料（可选） | 任意会话中整理 | 笔记、读过的文献 | 语料文件 | 三行摘要写得出；支撑度判断已填 |
+| 1. 选题 | `/rp-scope <方向> --slug <slug> [--corpus <语料>]` | 种子想法、档案、语料 | `01-scope.md`、`refs.md` | ≥8 篇已核实文献；无 SAME；假设有拒绝条件；识别假设 + 检验；数据获取方式已核实 |
 | 2. 起草 | `/rp-draft <slug>` | scope、官方要求 | `02-proposal-v1.md`、`02-notes-v1.md` | 字数内；主张—证据映射无空缺；占位符清单已交给用户 |
 | 3. 审稿 | `/rp-review <slug>` | proposal、refs | `03-review-v1.md` | 无 FATAL；MAJOR ≤ 2；总分 ≥ 75（最多 3 轮） |
 | 4. 套磁 | `/phd-outreach <slug> find` 等 | 定稿 proposal、scope | `outreach/*.md`、tracker 更新 | A 层导师已联系；回复已分类处理 |
@@ -41,7 +46,9 @@ profile.local.md
 
 1. `cp workflow/profile.template.md workflow/profile.local.md`，填写
 2. `mkdir -p applications && cp workflow/templates/tracker.csv applications/tracker.csv`
-3. 在本仓库目录启动 Claude Code，运行 `/rp-scope <你的研究方向> --slug <目录名>`
+3. 在本仓库目录启动 Claude Code：
+   - 已有 proposal：`/rp-improve <proposal 路径>`；想一节一节来就加 `--section <章节>` 或 `--interview`
+   - 从零开始：`/rp-scope <你的研究方向> --slug <目录名>`
 
 ## 共同规则
 
